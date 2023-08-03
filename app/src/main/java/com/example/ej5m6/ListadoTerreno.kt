@@ -25,7 +25,7 @@ class ListadoTerreno : Fragment() {
         binding = FragmentListadoTerrenoBinding.inflate(layoutInflater,container, false)
        initAdapter()
         binding.btnCargar.setOnClickListener {
-            terrenoVM.getAlllTerreno()
+            terrenoVM.getAllTerreno()
         }
 
         return binding.root

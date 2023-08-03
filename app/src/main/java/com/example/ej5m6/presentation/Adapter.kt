@@ -24,7 +24,7 @@ private val listItemTerreno = mutableListOf<Terreno>()
     }
 
     override fun onBindViewHolder(holder: ItemTerrenoViewHolder, position: Int) {
-     val terreno= listItemTerreno[position]
+     val terreno = listItemTerreno[position]
         holder.bind(terreno)
     }
    fun  setData(terreno: List<Terreno>){

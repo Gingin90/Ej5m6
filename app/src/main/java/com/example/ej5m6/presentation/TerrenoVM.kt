@@ -18,7 +18,7 @@ class TerrenoVM(application: Application) : AndroidViewModel(application) {
         val api = TerrrenoRetroFit.getRetrofitClient()
         repositorio = Repositorio(api)
     }
-    fun getAlllTerreno() = viewModelScope.launch {
+    fun getAllTerreno() = viewModelScope.launch {
         terrenoLiveData.value=repositorio.cargarTerreno()
 
     }
