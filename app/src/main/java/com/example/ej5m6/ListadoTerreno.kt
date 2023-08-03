@@ -22,6 +22,11 @@ class ListadoTerreno : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentListadoTerrenoBinding.inflate(layoutInflater,container, false)
+
+        binding.btnCargar.setOnClickListener {
+            terrenoVM.getAlllTerreno()
+        }
+
         return binding.root
     }
 }

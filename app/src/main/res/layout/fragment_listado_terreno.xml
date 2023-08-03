@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListadoTerreno">
@@ -11,8 +12,12 @@
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/btnCargar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="444dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
