@@ -1,23 +1,29 @@
 package com.example.ej5m6.data
 
-import com.example.ej5m6.data.remote.Terreno
+import androidx.lifecycle.LiveData
+import com.example.ej5m6.data.local.TerrenoDao
+import com.example.ej5m6.data.local.TerrenoEntity
 import com.example.ej5m6.data.remote.TerrenoAPI
 
-class Repositorio( private val terrenoAPI: TerrenoAPI) {
 
-     suspend fun cargarTerreno():List<Terreno>{
-          val respuesta=terrenoAPI.getData()
-         if (respuesta.isSuccessful){
-              val resp = respuesta.body()
-              resp?.let {
-                  return it
-              }
+class Repositorio( private val terrenoAPI: TerrenoAPI, private val terrenoDao: TerrenoDao) {
 
-          }
 
-          return emptyList()
-     }
-}
+    fun obtenerTerrenos(): LiveData<List<TerrenoEntity>> = terrenoDao.obtenerTerrenos()
+    suspend fun cargarTerreno() {
+
+        val respuesta = terrenoAPI.getData()
+        if (respuesta.isSuccessful) {
+            val resp = respuesta.body()
+            resp?.let {
+
+            }
+
+        }
+
+
+    }}
+
 
 
 
