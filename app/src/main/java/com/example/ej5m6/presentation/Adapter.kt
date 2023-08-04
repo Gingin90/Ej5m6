@@ -16,6 +16,7 @@ private val listItemTerreno = mutableListOf<TerrenoEntity>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemTerrenoViewHolder {
+
     binding = ItemTerrenoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ItemTerrenoViewHolder(binding)
     }
