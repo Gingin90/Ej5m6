@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.ej5m6.data.local.TerrenoEntity
 import com.example.ej5m6.data.remote.Terreno
 import com.example.ej5m6.databinding.ItemTerrenoBinding
 
 class Adapter : RecyclerView.Adapter<Adapter.ItemTerrenoViewHolder>() {
 
 lateinit var  binding : ItemTerrenoBinding
-private val listItemTerreno = mutableListOf<Terreno>()
+private val listItemTerreno = mutableListOf<TerrenoEntity>()
 
 
 
@@ -27,13 +28,13 @@ private val listItemTerreno = mutableListOf<Terreno>()
      val terreno = listItemTerreno[position]
         holder.bind(terreno)
     }
-   fun  setData(terreno: List<Terreno>){
+   fun  setData(terreno: List<TerrenoEntity>){
        this.listItemTerreno.clear()
        this.listItemTerreno.addAll(terreno)
        notifyDataSetChanged()
    }
     class ItemTerrenoViewHolder(val v:ItemTerrenoBinding):RecyclerView.ViewHolder(v.root) {
-        fun bind(terreno: Terreno) {
+        fun bind(terreno: TerrenoEntity) {
             v.imgTerreno.load(terreno.img)
 
         }
