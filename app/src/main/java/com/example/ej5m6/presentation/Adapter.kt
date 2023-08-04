@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.ej5m6.data.local.TerrenoEntity
-import com.example.ej5m6.data.remote.Terreno
 import com.example.ej5m6.databinding.ItemTerrenoBinding
 
 class Adapter : RecyclerView.Adapter<Adapter.ItemTerrenoViewHolder>() {

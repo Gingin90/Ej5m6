@@ -23,8 +23,9 @@ class ListadoTerreno : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentListadoTerrenoBinding.inflate(layoutInflater,container, false)
-       initAdapter()
+
         binding.btnCargar.setOnClickListener {
+            initAdapter()
             terrenoVM.getAllTerreno()
         }
 
