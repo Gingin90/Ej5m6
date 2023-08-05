@@ -9,5 +9,18 @@
         android:id="@+id/listadoTerreno"
         android:name="com.example.ej5m6.ListadoTerreno"
         android:label="fragment_listado_terreno"
-        tools:layout="@layout/fragment_listado_terreno" />
+        tools:layout="@layout/fragment_listado_terreno" >
+        <action
+            android:id="@+id/action_listadoTerreno_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.example.ej5m6.presentation.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_detalleFragment_to_listadoTerreno"
+            app:destination="@id/listadoTerreno" />
+    </fragment>
 </navigation>
