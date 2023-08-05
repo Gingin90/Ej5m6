@@ -7,7 +7,7 @@ import com.example.ej5m6.data.remote.Terreno
 import com.example.ej5m6.data.remote.TerrenoAPI
 
 
-class Repositorio( private val terrenoAPI: TerrenoAPI, private val terrenoDao: TerrenoDao) {
+class Repositorio(private val terrenoAPI: TerrenoAPI, private val terrenoDao: TerrenoDao) {
 
 
     fun obtenerTerrenos(): LiveData<List<TerrenoEntity>> = terrenoDao.obtenerTerrenos()
@@ -17,17 +17,23 @@ class Repositorio( private val terrenoAPI: TerrenoAPI, private val terrenoDao: T
         if (respuesta.isSuccessful) {
             val resp = respuesta.body()
             resp?.let { terrenos ->
-            val terrenosEntity =  terrenos.map {it.transformar()}
+                val terrenosEntity = terrenos.map { it.transformar() }
                 terrenoDao.insertTerrenos(terrenosEntity)
             }
 
         }
 
 
-    }}
+    }
 
- fun Terreno.transformar(): TerrenoEntity=
-     TerrenoEntity(this.id,this.price,this.type,this.img)
+    fun getTerreno(id: String): LiveData<TerrenoEntity> = terrenoDao.getTerreno(id)
+
+
+    fun Terreno.transformar(): TerrenoEntity =
+        TerrenoEntity(this.id, this.price, this.type, this.img)
+}
+
+
 
 
 

@@ -13,7 +13,7 @@ import com.example.ej5m6.presentation.TerrenoVM
 
 class ListadoTerreno : Fragment() {
     lateinit var binding : FragmentListadoTerrenoBinding
-    private val terrenoVM :TerrenoVM by  activityViewModels()
+    private val terrenoVM: TerrenoVM by activityViewModels()
 
 
 

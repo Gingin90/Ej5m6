@@ -11,11 +11,15 @@ import androidx.room.Query
 interface TerrenoDao {
     @Insert
 
-    suspend fun  insertTerreno(terrenoEntity: TerrenoEntity)
-    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertTerreno(terrenoEntity: TerrenoEntity)
 
-    suspend fun  insertTerrenos(terrenosEntity: List<TerrenoEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+
+    suspend fun insertTerrenos(terrenosEntity: List<TerrenoEntity>)
 
     @Query("Select * From tabla_terreno order by id ASC")
     fun obtenerTerrenos(): LiveData<List<TerrenoEntity>>
+
+    @Query("Select * From tabla_terreno where id =:id")
+    fun getTerreno(id: String): LiveData<TerrenoEntity>
 }
