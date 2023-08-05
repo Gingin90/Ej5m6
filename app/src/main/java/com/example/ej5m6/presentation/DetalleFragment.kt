@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import coil.load
 import com.example.ej5m6.R
 import com.example.ej5m6.databinding.FragmentDetalleBinding
 
@@ -33,6 +34,9 @@ class DetalleFragment : Fragment() {
         binding = FragmentDetalleBinding.inflate(layoutInflater, container, false)
         terrenoVM.terrenoLiveData(param1.toString()).observe(viewLifecycleOwner) {
             binding.tvID.text = it.id
+            binding.tvPrice.text = it.price.toString()
+            binding.tvType.text = it.type
+            binding.imag.load(it.img)
         }
         return binding.root
     }

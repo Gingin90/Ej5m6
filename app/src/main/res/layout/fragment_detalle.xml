@@ -5,6 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#BFB1E3"
     tools:context=".presentation.DetalleFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -49,8 +50,8 @@
 
     <ImageView
         android:id="@+id/imag"
-        android:layout_width="376dp"
-        android:layout_height="178dp"
+        android:layout_width="297dp"
+        android:layout_height="223dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
